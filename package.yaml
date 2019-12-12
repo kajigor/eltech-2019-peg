@@ -1,0 +1,56 @@
+name:                peg
+version:             0.1.0.0
+github:              "kajigor/eltech-2019-peg"
+license:             BSD3
+author:              "Ekaterina Verbitskaia"
+maintainer:          "kajigor@gmail.com"
+copyright:           "2019 Ekaterina Verbitskaia"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/kajigor/eltech-2019-peg#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  peg:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - peg
+  peg-play:
+    main:                Main.hs
+    source-dirs:         app/playground
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - peg
+  peg-tree:
+    main:                Main.hs
+    source-dirs:         app/tree
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - peg
+    - containers
